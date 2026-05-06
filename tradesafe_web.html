@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TradeSafe Logistics Panamá — Gestión operativa de importaciones y asesoría en cadena de suministro para empresas en Panamá. Importa sin riesgos.">
+<meta name="keywords" content="logística Panamá, importaciones Panamá, gestión de importaciones, consultoría logística, cadena de suministro, aduana Panamá, importar desde China, freight forwarding Panamá">
+<meta name="author" content="TradeSafe Logistics Panamá">
+<meta property="og:title" content="TradeSafe Logistics Panamá — Tu importación, en buenas manos">
+<meta property="og:description" content="Gestión operativa de importaciones y asesoría logística para empresas que quieren importar sin riesgos ni complicaciones.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tradesafepma.com">
+<title>TradeSafe Logistics Panamá | Gestión de Importaciones</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0d0d0d;
+  --dark:#141414;
+  --card:#1a1a1a;
+  --border:#2a2a2a;
+  --orange:#E07B20;
+  --orange-dark:#c96a10;
+  --white:#ffffff;
+  --text:#c8c8c8;
+  --muted:#666666;
+  --error:#dc3545;
+  --success:#28a745;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
+
+/* ── NAV ── */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(13,13,13,0.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.header-content{
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+}
+.logo img{height:44px;width:auto}
+.nav-center{display:flex;align-items:center;gap:0}
+nav ul{display:flex;list-style:none;gap:4px}
+nav ul li a{
+  padding:7px 14px;border-radius:5px;
+  color:var(--text);text-decoration:none;font-size:13px;font-weight:500;
+  transition:all .2s;letter-spacing:0.2px;
+}
+nav ul li a:hover{color:white;background:rgba(255,255,255,0.06)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-toggle{display:flex;gap:2px;background:rgba(255,255,255,0.06);border-radius:6px;padding:3px}
+.lang-btn{padding:5px 10px;border:none;border-radius:4px;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:1px;transition:all .2s;background:transparent;color:var(--muted);font-family:'Inter',sans-serif}
+.lang-btn.active{background:var(--orange);color:white}
+.nav-cta{
+  padding:8px 20px;background:var(--orange);color:white;border:none;
+  border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;
+  text-decoration:none;transition:all .2s;font-family:'Inter',sans-serif;
+  letter-spacing:0.2px;
+}
+.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.burger{display:none;background:none;border:none;color:white;font-size:20px;cursor:pointer;padding:4px}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:100px 24px 80px;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://tradesafepma.com/piwigo/i.php?/upload/2025/04/28/20250428165109-43b0e649-la.jpg') center/cover no-repeat;
+  opacity:0.18;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(105deg, rgba(13,13,13,1) 45%, rgba(13,13,13,0.5) 100%);
+}
+.hero-glow{
+  position:absolute;top:30%;right:15%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle, rgba(224,123,32,0.08) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
+.hero-inner{max-width:640px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(224,123,32,0.3);background:rgba(224,123,32,0.06);
+  border-radius:4px;padding:6px 14px;margin-bottom:28px;
+}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-eyebrow span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-weight:600}
+.hero h1{
+  font-size:clamp(40px,5.5vw,66px);font-weight:800;
+  line-height:1.05;letter-spacing:-1.5px;margin-bottom:22px;
+}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero-sub{
+  font-size:17px;color:var(--text);line-height:1.75;
+  max-width:500px;margin-bottom:36px;font-weight:300;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:13px 26px;background:var(--orange);color:white;
+  border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;
+  transition:all .2s;
+}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(224,123,32,0.3)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 22px;border:1px solid var(--border);color:var(--text);
+  border-radius:6px;font-size:14px;font-weight:500;text-decoration:none;
+  transition:all .2s;
+}
+.btn-ghost:hover{border-color:var(--orange);color:white}
+.hero-stats{
+  display:flex;gap:0;margin-top:56px;
+  padding-top:36px;border-top:1px solid var(--border);
+  max-width:500px;
+}
+.stat{flex:1}
+.stat+.stat{border-left:1px solid var(--border);padding-left:28px}
+.stat-num{font-size:28px;font-weight:800;color:var(--orange);line-height:1;letter-spacing:-1px}
+.stat-lbl{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4;letter-spacing:0.2px}
+
+/* ── SECTIONS ── */
+section.interior{padding:90px 24px}
+.container{max-width:1200px;margin:0 auto}
+.s-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.s-title{font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-0.5px;line-height:1.15;margin-bottom:14px}
+.s-sub{font-size:15px;color:var(--text);line-height:1.75;max-width:520px;font-weight:300}
+
+/* ── SERVICES ── */
+.services-bg{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;
+  margin-top:52px;
+}
+.svc-card{
+  background:var(--dark);padding:34px 28px;transition:background .2s;position:relative;
+}
+.svc-card:hover{background:#1a1a1a}
+.svc-card.featured{background:var(--card)}
+.svc-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--orange)}
+.svc-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;font-weight:600}
+.svc-name{font-size:17px;font-weight:700;color:white;margin-bottom:10px;line-height:1.3}
+.svc-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:22px}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.svc-list li{font-size:13px;color:var(--text);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.svc-list li::before{content:'–';color:var(--orange);flex-shrink:0}
+.svc-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:600;color:var(--orange);text-decoration:none;
+  transition:gap .15s;
+}
+.svc-link:hover{gap:10px}
+
+/* ── WHY ── */
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;
+  margin-top:52px;
+}
+.why-card{background:var(--dark);padding:30px 26px;transition:background .2s}
+.why-card:hover{background:var(--card)}
+.why-icon{font-size:22px;margin-bottom:12px}
+.why-title{font-size:14px;font-weight:700;color:white;margin-bottom:7px}
+.why-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* ── ABOUT ── */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:52px}
+.about-img-wrap{position:relative;border-radius:12px;overflow:hidden;background:var(--card);border:1px solid var(--border)}
+.about-img-wrap img{width:100%;display:block}
+.about-img-placeholder{
+  aspect-ratio:4/5;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:12px;color:var(--muted);font-size:13px;text-align:center;padding:40px;
+}
+.about-img-placeholder i{font-size:48px;color:var(--border)}
+.about-text p{font-size:14px;color:var(--text);line-height:1.8;margin-bottom:14px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.about-stat{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:8px;padding:16px;border-left:2px solid var(--orange);
+}
+.about-stat-num{font-size:22px;font-weight:800;color:var(--orange)}
+.about-stat-lbl{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}
+
+/* ── CONTACT ── */
+.contact-bg{background:var(--dark);border-top:1px solid var(--border)}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px}
+.contact-left h3{font-size:19px;font-weight:700;color:white;margin-bottom:10px}
+.contact-left p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:28px}
+.contact-methods{display:flex;flex-direction:column;gap:12px}
+.contact-method{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;border:1px solid var(--border);border-radius:8px;
+  text-decoration:none;background:var(--card);transition:all .2s;
+}
+.contact-method:hover{border-color:var(--orange)}
+.method-icon{
+  width:40px;height:40px;border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;color:white;
+}
+.method-icon.wa{background:#25D366}
+.method-icon.mail{background:var(--orange)}
+.method-text strong{display:block;font-size:13px;color:white;font-weight:600}
+.method-text span{font-size:12px;color:var(--muted)}
+
+/* FORM */
+.form-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:34px}
+.form-box h3{font-size:16px;font-weight:700;color:white;margin-bottom:22px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.form-control{
+  width:100%;padding:11px 13px;
+  background:#111;border:1px solid var(--border);border-radius:6px;
+  color:white;font-family:'Inter',sans-serif;font-size:13px;
+  outline:none;transition:border-color .2s;
+}
+.form-control::placeholder{color:#3a3a3a}
+.form-control:focus{border-color:var(--orange)}
+.form-control.error-field{border-color:var(--error)}
+.form-control option{background:#111}
+textarea.form-control{min-height:90px;resize:vertical}
+.error-msg{color:var(--error);font-size:11px;margin-top:4px;display:none}
+.alert-box{
+  padding:13px 16px;border-radius:6px;margin-bottom:16px;
+  font-size:13px;display:none;align-items:center;gap:10px;
+}
+.alert-box.success{background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.3);color:#6fcf97;display:flex}
+.alert-box.error-alert{background:rgba(220,53,69,0.12);border:1px solid rgba(220,53,69,0.3);color:#f8a5ae;display:flex}
+.submit-btn{
+  width:100%;padding:13px;background:var(--orange);color:white;
+  border:none;border-radius:6px;font-size:14px;font-weight:700;
+  font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;
+  margin-top:6px;letter-spacing:0.2px;
+}
+.submit-btn:hover{background:var(--orange-dark)}
+.submit-btn:disabled{background:var(--muted);cursor:not-allowed}
+.form-note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);border-top:1px solid var(--border);
+  padding:52px 24px 24px;
+}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+  padding-bottom:36px;border-bottom:1px solid var(--border);margin-bottom:24px;
+}
+.footer-brand img{height:40px;margin-bottom:16px}
+.footer-brand p{font-size:13px;color:var(--muted);line-height:1.7;max-width:260px;margin-bottom:20px}
+.social-links{display:flex;gap:10px}
+.social-links a{
+  width:36px;height:36px;border-radius:6px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);text-decoration:none;font-size:14px;transition:all .2s;
+}
+.social-links a:hover{background:var(--orange);border-color:var(--orange);color:white}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:white;margin-bottom:16px}
+.footer-links-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-links-list a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links-list a:hover{color:var(--orange)}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.footer-contact-item i{color:var(--orange);font-size:13px;margin-top:2px;flex-shrink:0}
+.footer-contact-item span{font-size:13px;color:var(--muted);line-height:1.5}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-copy{font-size:12px;color:var(--muted)}
+.footer-nav{display:flex;gap:20px}
+.footer-nav a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-nav a:hover{color:var(--orange)}
+
+/* ── WA FLOAT ── */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:999;
+  width:52px;height:52px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:22px;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.1)}
+
+/* ── LANG ── */
+[data-es],[data-en]{display:none}
+html[data-lang="es"] [data-es]{display:block}
+html[data-lang="en"] [data-en]{display:block}
+html[data-lang="es"] span[data-es],html[data-lang="es"] li[data-es]{display:inline}
+html[data-lang="en"] span[data-en],html[data-lang="en"] li[data-en]{display:inline}
+html[data-lang="es"] option[data-es]{display:block}
+html[data-lang="en"] option[data-en]{display:block}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav ul{display:none}
+  .burger{display:block}
+  nav ul.open{
+    display:flex;flex-direction:column;gap:0;
+    position:fixed;top:68px;left:0;width:100%;
+    background:rgba(13,13,13,0.98);border-bottom:1px solid var(--border);
+    padding:12px 0;
+  }
+  nav ul.open li a{display:block;padding:12px 24px;border-radius:0}
+  .services-grid,.why-grid{grid-template-columns:1fr}
+  .about-layout,.contact-layout{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{flex-direction:column;gap:20px}
+  .stat+.stat{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:20px}
+}
+@media(max-width:600px){
+  .header-content{padding:0 16px}
+  section.interior{padding:60px 16px}
+  .hero{padding:90px 16px 60px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-content">
+    <a href="#inicio" class="logo">
+      <img src="https://tradesafepma.com/piwigo/i.php?/upload/2025/04/28/20250428162054-3ec02c34-la.png" alt="TradeSafe Logistics Panamá" style="filter:brightness(0) invert(1)">
+    </a>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="#inicio"><span data-es>Inicio</span><span data-en>Home</span></a></li>
+        <li><a href="#servicios"><span data-es>Servicios</span><span data-en>Services</span></a></li>
+        <li><a href="#nosotros"><span data-es>Nosotros</span><span data-en>About</span></a></li>
+        <li><a href="#por-que"><span data-es>¿Por qué elegirnos?</span><span data-en>Why us?</span></a></li>
+        <li><a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#contacto" class="nav-cta"><span data-es>Contáctanos</span><span data-en>Contact Us</span></a>
+      <button class="burger" id="burger-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <div class="hero-dot"></div>
+        <span data-es>Logística Internacional · Panamá</span>
+        <span data-en>International Logistics · Panama</span>
+      </div>
+      <h1>
+        <span data-es>Tu importación,<br><em>en buenas manos.</em></span>
+        <span data-en>Your imports,<br><em>in good hands.</em></span>
+      </h1>
+      <p class="hero-sub">
+        <span data-es>Coordinamos cada etapa de tus embarques — documentos, naviera, aduana y transporte — para que te enfoques en lo que importa: tu negocio.</span>
+        <span data-en>We coordinate every stage of your shipments — documents, carrier, customs and transport — so you can focus on what matters: your business.</span>
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/50765102918" target="_blank" class="btn-primary">
+          <i class="fab fa-whatsapp"></i>
+          <span data-es>Hablar por WhatsApp</span><span data-en>Chat on WhatsApp</span>
+        </a>
+        <a href="#servicios" class="btn-ghost">
+          <span data-es>Nuestros servicios</span><span data-en>Our services</span>
+          <i class="fas fa-arrow-right" style="font-size:11px"></i>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-lbl"><span data-es>Años en logística internacional</span><span data-en>Years in international logistics</span></div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-lbl"><span data-es>Continentes — Asia · Europa · USA</span><span data-en>Continents — Asia · Europe · USA</span></div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">360°</div>
+          <div class="stat-lbl"><span data-es>Visibilidad de tu operación</span><span data-en>Operational visibility</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="interior services-bg" id="servicios">
+  <div class="container">
+    <div class="s-tag"><span data-es>Servicios</span><span data-en>Services</span></div>
+    <h2 class="s-title"><span data-es>Una solución para cada etapa</span><span data-en>A solution for every stage</span></h2>
+    <p class="s-sub"><span data-es>Desde tu primera importación hasta la optimización completa de tu cadena de suministro.</span><span data-en>From your first shipment to full supply chain optimization.</span></p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-tag"><span data-es>Nuevos importadores</span><span data-en>New importers</span></div>
+        <div class="svc-name"><span data-es>Consultoría de Inicio</span><span data-en>Import Starter Consulting</span></div>
+        <div class="svc-desc"><span data-es>Importa bien desde el primer día. Te acompañamos desde la decisión hasta que tu primera carga llega sin problemas.</span><span data-en>Import right from day one. We guide you from decision to successful first delivery.</span></div>
+        <ul class="svc-list">
+          <li data-es>Orientación completa del proceso aduanero</li>
+          <li data-en>Full customs process orientation</li>
+          <li data-es>Selección de Incoterm, naviera y ruta</li>
+          <li data-en>Incoterm, carrier & route selection</li>
+          <li data-es>Revisión documental de principio a fin</li>
+          <li data-en>End-to-end document review</li>
+          <li data-es>Acompañamiento hasta la entrega final</li>
+          <li data-en>Guidance through final delivery</li>
+        </ul>
+        <a href="#contacto" class="svc-link"><span data-es>Solicitar información</span><span data-en>Request information</span> →</a>
+      </div>
+      <div class="svc-card featured">
+        <div class="svc-tag">⭐ <span data-es>Servicio principal</span><span data-en>Core service</span></div>
+        <div class="svc-name"><span data-es>Gestión Operativa de Importaciones</span><span data-en>Import Operations Management</span></div>
+        <div class="svc-desc"><span data-es>Coordinamos todos los actores de tu importación. Tu carga llega — tú te enfocas en tu negocio.</span><span data-en>We coordinate all parties in your import. Your cargo arrives — you focus on your business.</span></div>
+        <ul class="svc-list">
+          <li data-es>Coordinación naviera, aduana y transporte</li>
+          <li data-en>Carrier, customs & transport coordination</li>
+          <li data-es>Revisión documental proactiva</li>
+          <li data-en>Proactive document review</li>
+          <li data-es>Seguimiento y alertas en tiempo real</li>
+          <li data-en>Real-time tracking & alerts</li>
+          <li data-es>Reportes al cliente en cada etapa</li>
+          <li data-en>Client updates at every stage</li>
+        </ul>
+        <a href="#contacto" class="svc-link"><span data-es>Solicitar información</span><span data-en>Request information</span> →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-tag"><span data-es>Empresas con operación</span><span data-en>Operating companies</span></div>
+        <div class="svc-name"><span data-es>Diagnóstico de Cadena de Suministro</span><span data-en>Supply Chain Diagnosis</span></div>
+        <div class="svc-desc"><span data-es>Evaluamos tus operaciones y entregamos un informe con exactamente dónde está perdiendo dinero tu empresa.</span><span data-en>We evaluate your operations and deliver a report showing exactly where your company is losing money.</span></div>
+        <ul class="svc-list">
+          <li data-es>Análisis de procesos y costos actuales</li>
+          <li data-en>Current process & cost analysis</li>
+          <li data-es>Identificación de costos evitables</li>
+          <li data-en>Avoidable cost identification</li>
+          <li data-es>Informe ejecutivo con recomendaciones</li>
+          <li data-en>Executive report with recommendations</li>
+          <li data-es>Presentación a dirección</li>
+          <li data-en>Management presentation</li>
+        </ul>
+        <a href="#contacto" class="svc-link"><span data-es>Solicitar información</span><span data-en>Request information</span> →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="interior" id="nosotros">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-img-wrap">
+        <img src="https://tradesafepma.com/piwigo/i.php?/upload/2025/04/28/20250428162054-3ec02c34-la.png" alt="TradeSafe Logistics" style="filter:brightness(0) invert(1);padding:48px;background:#1a1a1a">
+      </div>
+      <div class="about-text">
+        <div class="s-tag"><span data-es>Sobre nosotros</span><span data-en>About us</span></div>
+        <h2 class="s-title"><span data-es>Impulsando el éxito de tu operación internacional</span><span data-en>Driving the success of your international operation</span></h2>
+        <p><span data-es>En TradeSafe combinamos más de 10 años de experiencia en logística internacional y comercio exterior con un profundo conocimiento de la operación aduanera en Panamá.</span><span data-en>At TradeSafe we combine over 10 years of experience in international logistics and foreign trade with deep knowledge of customs operations in Panama.</span></p>
+        <p><span data-es>Entendemos los desafíos que enfrentan las empresas al importar — especialmente cuando no tienen a nadie dedicado exclusivamente a ese proceso. Por eso funcionamos como el experto logístico que necesitan, sin los costos de una contratación de tiempo completo.</span><span data-en>We understand the challenges companies face when importing — especially when no one is dedicated exclusively to that process. That's why we act as the logistics expert they need, without the costs of a full-time hire.</span></p>
+        <p><span data-es>Con TradeSafe como tu socio estratégico, puedes confiar en nuestra dedicación, criterio técnico y compromiso con cada operación que gestionamos.</span><span data-en>With TradeSafe as your strategic partner, you can trust our dedication, technical expertise and commitment to every operation we manage.</span></p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">10+</div>
+            <div class="about-stat-lbl"><span data-es>Años en logística internacional</span><span data-en>Years in international logistics</span></div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">Asia · EU · USA</div>
+            <div class="about-stat-lbl"><span data-es>Rutas de importación activas</span><span data-en>Active import routes</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="interior services-bg" id="por-que">
+  <div class="container">
+    <div class="s-tag"><span data-es>¿Por qué elegirnos?</span><span data-en>Why choose us?</span></div>
+    <h2 class="s-title"><span data-es>No movemos carga.<br>Protegemos tu inversión.</span><span data-en>We don't just move cargo.<br>We protect your investment.</span></h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-shield-alt" style="color:var(--orange)"></i></div>
+        <div class="why-title"><span data-es>Protección activa</span><span data-en>Active protection</span></div>
+        <div class="why-desc"><span data-es>Detectamos errores documentales y riesgos operativos antes de que se conviertan en costos para tu empresa.</span><span data-en>We detect document errors and operational risks before they become costs for your company.</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-satellite-dish" style="color:var(--orange)"></i></div>
+        <div class="why-title"><span data-es>Visibilidad total</span><span data-en>Full visibility</span></div>
+        <div class="why-desc"><span data-es>Sabes el estado de tu carga en todo momento. Nosotros perseguimos a la naviera — tú recibes el reporte.</span><span data-en>You know your cargo status at all times. We chase the carrier — you receive the update.</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-user-tie" style="color:var(--orange)"></i></div>
+        <div class="why-title"><span data-es>Trato directo con el experto</span><span data-en>Direct expert access</span></div>
+        <div class="why-desc"><span data-es>Hablas siempre con quien toma las decisiones — no con un intermediario ni un call center.</span><span data-en>You always speak with the decision-maker — not a middleman or call center.</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-globe" style="color:var(--orange)"></i></div>
+        <div class="why-title"><span data-es>Experiencia global</span><span data-en>Global experience</span></div>
+        <div class="why-desc"><span data-es>Más de 10 años gestionando importaciones desde Asia, Europa y USA. Conocemos cada actor del proceso.</span><span data-en>Over 10 years managing imports from Asia, Europe and USA. We know every player in the process.</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-bolt" style="color:var(--orange)"></i></div>
+        <div class="why-title"><span data-es>Respuesta ante imprevistos</span><span data-en>Crisis response</span></div>
+        <div class="why-desc"><span data-es>Cuando algo sale mal, actuamos antes de que lo sepas. Nuestra red resuelve en horas lo que tomaría días.</span><span data-en>When something goes wrong, we act before you know. Our network resolves in hours what would take days.</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-chart-line" style="color:var(--orange)"></i></div>
+        <div class="why-title"><span data-es>Visión estratégica</span><span data-en>Strategic vision</span></div>
+        <div class="why-desc"><span data-es>Identificamos oportunidades de mejora para que importes mejor, más rápido y más eficientemente cada vez.</span><span data-en>We identify improvement opportunities so you import better, faster and more efficiently every time.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="interior contact-bg" id="contacto">
+  <div class="container">
+    <div class="s-tag"><span data-es>Contacto</span><span data-en>Contact</span></div>
+    <h2 class="s-title"><span data-es>¿Listo para importar sin complicaciones?</span><span data-en>Ready to import without the hassle?</span></h2>
+    <div class="contact-layout">
+      <div class="contact-left">
+        <h3><span data-es>Hablemos de tu operación</span><span data-en>Let's talk about your operation</span></h3>
+        <p><span data-es>Cuéntanos qué necesitas y te mostramos cómo podemos ayudarte. Sin compromisos, sin presiones.</span><span data-en>Tell us what you need and we'll show you how we can help. No commitments, no pressure.</span></p>
+        <div class="contact-methods">
+          <a href="https://wa.me/50765102918" target="_blank" class="contact-method">
+            <div class="method-icon wa"><i class="fab fa-whatsapp"></i></div>
+            <div class="method-text"><strong>WhatsApp</strong><span>+507 6510-2918</span></div>
+          </a>
+          <a href="mailto:ventas@tradesafepma.com" class="contact-method">
+            <div class="method-icon mail"><i class="fas fa-envelope"></i></div>
+            <div class="method-text"><strong>Email</strong><span>ventas@tradesafepma.com</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="form-box">
+        <h3><span data-es>Déjanos tus datos</span><span data-en>Leave us your details</span></h3>
+        <div class="alert-box success" id="alert-success">
+          <i class="fas fa-check-circle"></i>
+          <span data-es>¡Mensaje enviado! Te contactaremos pronto.</span><span data-en>Message sent! We'll be in touch soon.</span>
+        </div>
+        <div class="alert-box error-alert" id="alert-error">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span data-es>Ha ocurrido un error. Contáctanos directamente por WhatsApp.</span><span data-en>An error occurred. Contact us directly via WhatsApp.</span>
+        </div>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label><span data-es>Nombre *</span><span data-en>Name *</span></label>
+            <input type="text" id="f-name" class="form-control" required placeholder="Tu nombre completo">
+            <div class="error-msg" id="err-name"><span data-es>Por favor ingresa tu nombre</span><span data-en>Please enter your name</span></div>
+          </div>
+          <div class="form-group">
+            <label><span data-es>Empresa</span><span data-en>Company</span></label>
+            <input type="text" id="f-company" class="form-control" placeholder="Nombre de tu empresa">
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="f-email" class="form-control" required placeholder="correo@empresa.com">
+            <div class="error-msg" id="err-email"><span data-es>Por favor ingresa un email válido</span><span data-en>Please enter a valid email</span></div>
+          </div>
+          <div class="form-group">
+            <label><span data-es>Teléfono</span><span data-en>Phone</span></label>
+            <input type="tel" id="f-phone" class="form-control" placeholder="+507 0000-0000">
+          </div>
+          <div class="form-group">
+            <label><span data-es>¿En qué podemos ayudarte?</span><span data-en>How can we help?</span></label>
+            <select id="f-service" class="form-control">
+              <option value="" data-es>Selecciona un servicio</option>
+              <option value="" data-en>Select a service</option>
+              <option value="gestion" data-es>Gestión de importación</option>
+              <option value="gestion" data-en>Import management</option>
+              <option value="consultoria" data-es>Consultoría de inicio</option>
+              <option value="consultoria" data-en>Starter consulting</option>
+              <option value="diagnostico" data-es>Diagnóstico de cadena de suministro</option>
+              <option value="diagnostico" data-en>Supply chain diagnosis</option>
+              <option value="otro" data-es>Otro</option>
+              <option value="otro" data-en>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><span data-es>Mensaje *</span><span data-en>Message *</span></label>
+            <textarea id="f-message" class="form-control" required placeholder="Cuéntanos sobre tu operación o necesidad..."></textarea>
+            <div class="error-msg" id="err-message"><span data-es>Por favor escribe tu mensaje</span><span data-en>Please write your message</span></div>
+          </div>
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span data-es>Enviar mensaje</span><span data-en>Send message</span>
+          </button>
+          <p class="form-note"><span data-es>Respondemos en menos de 24 horas</span><span data-en>We respond within 24 hours</span></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://tradesafepma.com/piwigo/i.php?/upload/2025/04/28/20250428162054-3ec02c34-la.png" alt="TradeSafe" style="filter:brightness(0) invert(1)">
+      <p><span data-es>Soluciones integrales en gestión de importaciones y asesoría logística para empresas en Panamá y la región.</span><span data-en>Comprehensive import management and logistics consulting solutions for companies in Panama and the region.</span></p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/agustin-martinez-rios-71641482/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/tradesafelogistics" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/50765102918" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4><span data-es>Navegación</span><span data-en>Navigation</span></h4>
+      <ul class="footer-links-list">
+        <li><a href="#inicio"><span data-es>Inicio</span><span data-en>Home</span></a></li>
+        <li><a href="#servicios"><span data-es>Servicios</span><span data-en>Services</span></a></li>
+        <li><a href="#nosotros"><span data-es>Nosotros</span><span data-en>About</span></a></li>
+        <li><a href="#por-que"><span data-es>¿Por qué elegirnos?</span><span data-en>Why us?</span></a></li>
+        <li><a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4><span data-es>Servicios</span><span data-en>Services</span></h4>
+      <ul class="footer-links-list">
+        <li><a href="#servicios"><span data-es>Gestión de importaciones</span><span data-en>Import management</span></a></li>
+        <li><a href="#servicios"><span data-es>Consultoría de inicio</span><span data-en>Starter consulting</span></a></li>
+        <li><a href="#servicios"><span data-es>Diagnóstico logístico</span><span data-en>Logistics diagnosis</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4><span data-es>Contacto</span><span data-en>Contact</span></h4>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Panamá, Panamá</span></div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>ventas@tradesafepma.com</span></div>
+      <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span>+507 6510-2918</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 TradeSafe Logistics Panamá. <span data-es>Todos los derechos reservados.</span><span data-en>All rights reserved.</span></div>
+    <div class="footer-nav">
+      <a href="#inicio"><span data-es>Inicio</span><span data-en>Home</span></a>
+      <a href="#servicios"><span data-es>Servicios</span><span data-en>Services</span></a>
+      <a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/50765102918" target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+// Lang
+function setLang(l){
+  document.documentElement.setAttribute('data-lang',l);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+}
+setLang('es');
+
+// Mobile menu
+document.getElementById('burger-btn').addEventListener('click',()=>{
+  document.getElementById('nav-menu').classList.toggle('open');
+});
+
+// Close menu on link click
+document.querySelectorAll('#nav-menu a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('nav-menu').classList.remove('open'));
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-70,behavior:'smooth'})}
+  });
+});
+
+// Form validation
+function validateEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}
+function showErr(id,errId){
+  document.getElementById(id).classList.add('error-field');
+  document.getElementById(errId).style.display='block';
+}
+function clearErr(id,errId){
+  document.getElementById(id).classList.remove('error-field');
+  document.getElementById(errId).style.display='none';
+}
+
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  let valid=true;
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const msg=document.getElementById('f-message').value.trim();
+
+  if(!name){showErr('f-name','err-name');valid=false}else{clearErr('f-name','err-name')}
+  if(!email||!validateEmail(email)){showErr('f-email','err-email');valid=false}else{clearErr('f-email','err-email')}
+  if(!msg){showErr('f-message','err-message');valid=false}else{clearErr('f-message','err-message')}
+
+  if(!valid)return;
+
+  const btn=document.getElementById('submit-btn');
+  btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i>';
+
+  setTimeout(()=>{
+    document.getElementById('alert-success').style.display='flex';
+    this.reset();
+    btn.disabled=false;
+    btn.innerHTML=document.documentElement.getAttribute('data-lang')==='es'?'Enviar mensaje':'Send message';
+    setTimeout(()=>{document.getElementById('alert-success').style.display='none'},5000);
+  },1500);
+});
+
+// Phone format
+document.getElementById('f-phone').addEventListener('input',function(){
+  let v=this.value.replace(/\D/g,'');
+  if(v.length>4)v=v.slice(0,4)+'-'+v.slice(4,8);
+  this.value=v;
+});
+</script>
+</body>
+</html>
